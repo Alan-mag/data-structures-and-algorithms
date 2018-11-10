@@ -11,15 +11,24 @@ Note: You might need to use the same method more than once.
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
-const count = (target, input) => { // better way w/reduce or something? --> need to use filter map or reduce
-  let total = 0;
-  input.forEach((ele, i) => {
-    ele.forEach((num, i) => {
-      if (num === target) {total+=1;}
-    })
-  })
-  return total;
-};
+// const count = (target, input) => { // better way w/reduce or something? --> need to use filter map or reduce
+//   let total = 0;
+//   input.forEach((ele, i) => {
+//     ele.forEach((num, i) => {
+//       if (num === target) {total+=1;}
+//     })
+//   })
+//   return total;
+// };
+
+const count = (target, input) => {
+  return input.reduce((acc, ele) => {
+    acc = acc.concat(ele)
+    return acc;
+  }, []).filter((num) => {
+    return num === target
+  }).length;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
