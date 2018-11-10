@@ -31,16 +31,26 @@ You may want to use filter, map, or reduce for this problem, but are not require
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
-const totalSum = (input) => {
-  let total = 0;
- input.forEach((arr, i) => {
-   let arrTotal = arr.reduce((acc, num, i) => {
-     return acc+=num;
-   }, 0);
-   total+=arrTotal;
- })
- return total;
-};
+// const totalSum = (input) => {
+//   let total = 0;
+//  input.forEach((arr, i) => {
+//    let arrTotal = arr.reduce((acc, num, i) => {
+//      return acc+=num;
+//    }, 0);
+//    total+=arrTotal;
+//  })
+//  return total;
+// };
+
+const totalSum = input => {
+  return input.reduce((acc, ele) => {
+    acc = acc.concat(ele);
+    return acc;
+  }, []).reduce((total, num) => {
+    total = total + num;
+    return total;
+  }, 0);
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -54,20 +64,30 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
-const divisibleByFiveTwoToThePower = (input) => {
-  let rtnArr = [];
-  input.forEach((arr, i) => {
-    let tempArr = [];
-    let newArray = arr.filter((num) => {
-      if (typeof num != 'number') {return;}
-      if (num % 5 === 0) {
-        tempArr.push(Math.pow(2,num));
-      }
+// const divisibleByFiveTwoToThePower = (input) => {
+//   let rtnArr = [];
+//   input.forEach((arr, i) => {
+//     let tempArr = [];
+//     arr.filter((num) => {
+//       if (typeof num != 'number') {return;}
+//       if (num % 5 === 0) {
+//         tempArr.push(Math.pow(2,num));
+//       }
+//     })
+//     rtnArr.push(tempArr);
+//   })
+//   return rtnArr;
+// };
+
+const divisibleByFiveTwoToThePower = input => {
+  return input.map((ele) => {
+    return ele.filter((num) => {
+      return (typeof num === 'number' && num % 5 === 0);
+    }).map((number) => {
+      return Math.pow(2, number);
     })
-    rtnArr.push(tempArr);
   })
-  return rtnArr;
-};
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
