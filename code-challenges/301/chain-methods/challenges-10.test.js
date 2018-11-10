@@ -160,14 +160,23 @@ let starWarsData = [{
   gender: 'female'
 }]
 
+// let findMaleAndFemale = (data) => {
+//   let rtn = [];
+//   data.forEach((char) => {
+//     if (char.gender === 'female' || char.gender === 'male') {
+//       rtn.push(char.name);
+//     }
+//   })
+//   return rtn.join(' and ');
+// }
+
 let findMaleAndFemale = (data) => {
-  let rtn = [];
-  data.forEach((char) => {
-    if (char.gender === 'female' || char.gender === 'male') {
-      rtn.push(char.name);
-    }
-  })
-  return rtn.join(' and ');
+  return data.filter((char) => {
+    return (char.gender === 'male' || char.gender === 'female')
+  }).reduce((acc, person) => {
+    acc = acc.concat(person.name);
+    return acc;
+  }, []).join(' and ');
 }
 
 /* ------------------------------------------------------------------------------------------------
