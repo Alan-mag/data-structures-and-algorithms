@@ -194,9 +194,7 @@ let findShortest = (data) => {
   }, data[0]).name;
 }
 
-// let findShortest = (data) => {
-  
-// }
+// todo: try w/map or filter?
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
