@@ -9,7 +9,10 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
+  if(arr.length === 0) {return []}
+  let matches = arr.join(' ').match(/\b(\w)/g);
+  console.log(matches)
+  return matches;
 };
 
 /* ------------------------------------------------------------------------------------------------
