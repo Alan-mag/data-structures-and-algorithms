@@ -47,11 +47,11 @@ describe('Testing reverse array methods', () => {
     expect(reverseArrayOne([1, 2, 3, 4])).toStrictEqual([4, 3, 2, 1]);
   });
 
-  test('It should return original array reversed (method two)', () => {
+  test('It should return original array reversed (method three)', () => {
     expect(reverseArrayThree([1, 2, 3, 4, 5])).toStrictEqual([5, 4, 3, 2, 1]);
   });
 
-  test('It should return original array reversed (method two)', () => {
+  test('It should return original array reversed (method four)', () => {
     expect(reverseArrayFour([1, 2, 3, 4, 5])).toStrictEqual([5, 4, 3, 2, 1]);
   });
 });
