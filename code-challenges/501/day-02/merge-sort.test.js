@@ -1,3 +1,8 @@
+'use strict';
+
+// time complexity   : O(n log n)
+// space complexity  : O(n)
+
 function mergeSort(arr) {
   if (arr.length === 1) {
     return arr;
@@ -21,5 +26,5 @@ function merge(left, right) {
     }
   }
 
-  return [...results, ...left, ...right];
+  return [...results, ...left, ...right]; // take everthing out of result, left, right in case of excess values - same as concat here
 }
