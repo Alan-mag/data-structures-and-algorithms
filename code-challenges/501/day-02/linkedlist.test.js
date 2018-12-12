@@ -191,19 +191,19 @@ class LinkedList {
 
   evenOddPartition() {
     let curNode = this.head;
-    while (curNode) {
-      let saved = curNode.next;
-      if (curNode.data % 2 === 0) {    // test if even
-        curNode.next = this.head;
-        this.head = curNode;
+    while (curNode.next) {
+      let nodeToCheck = curNode.next;
+      let nodeToConnect = curNode.next.next;
+      if (nodeToCheck.data % 2 === 0) {    // test if even
+        curNode.next = nodeToConnect;
+        nodeToCheck.next = this.head;
+        this.head = nodeToCheck;
       }
-      curNode = saved; // this is circular
+
+      curNode = curNode.next; // this is circular
     }
     return this;
   }
-
-  // figure out jest test --> accumulator & array
-  // apply other algorithm to log out linkedlist vals
 
   *[Symbol.iterator]() {
     let node = this.head;
@@ -223,6 +223,8 @@ l.add(3);
 l.add(4);
 l.add(5);
 l.add(7);
+l.add(8);
+l.add(9);
 
 console.log(l.traverse((v) => {
   console.log(v)
@@ -233,65 +235,3 @@ let partition = l.evenOddPartition();
 console.log(partition.traverse((v) => {
   console.log(v)
 }))
-
-
-// console.log(l.evenOddPartition());
-// console.log(JSON.stringify(l.evenOddPartition()));
-
-// let part = l.evenOddPartition();
-// part.traverse((v) => {
-//   console.log(v)
-// })
-
-
-
-
-
-/// examples in class
-
-// class Node2 {
-//   constructor(data, next) {
-//     this.data = data;
-//     this.next = next;
-//   }
-// }
-
-// class LinkedList2 {
-//   constructor() {
-//     this.head = null;
-//   }
-
-//   add(val) {
-//     let nn = new Node2(val);
-//     nn.next = this.head;
-//     this.head = nn;
-//   }
-
-//   traverse(callback) {
-//     let current = this.head;
-//     while(current) {
-//       callback(current.data);
-//       current = current.next;
-//     }
-//   }
-
-//   remove(val) {
-//     if (!this.head) {
-//       return;
-//     }
-//     let current = this.head;
-//     if (val === current.head) {
-//       this.head = current.next;
-//       if (!this.head) {
-//         return;
-//       }
-//     }
-//     current = this.head;
-//     while(current.next.next !== null) {
-//       if (val === current.next.val) {
-//         current.next = current.next.next;
-//       }
-//       current = current.next;
-//     }
-//   }
-// }
