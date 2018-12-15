@@ -9,6 +9,8 @@ function findSumZero(arr) {
       sumMap[localSum] = [i, j];
     }
   }
+
+  // console.log(sumMap);
   
   arr.forEach((ele, index) => {
     let checknumber = ele * -1

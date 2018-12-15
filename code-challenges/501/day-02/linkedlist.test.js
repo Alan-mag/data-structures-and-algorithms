@@ -10,12 +10,16 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.tail = null;
   }
 
   add(val) {
     let nn = new Node(val);
     nn.next = this.head;
     this.head = nn;
+    if (this.head.next == null) {
+      this.tail = this.head;
+    }
   }
 
   traverse(callback) {
@@ -170,12 +174,15 @@ class LinkedList {
 
   getFromLast(k) {
     let hare = this.head;
+    let tort = this.head;
+
     let counter = 0;
+
     while(hare) {
-      if (counter === k) {
-        let tort = this.head
+      if (counter === (k + 1)) {
+        tort = tort.next;
       }
-      if (tort) {
+      if (tort !== this.head) {
         tort = tort.next;
       }
       hare = hare.next;
@@ -200,7 +207,7 @@ class LinkedList {
         this.head = nodeToCheck;
       }
 
-      curNode = curNode.next; // this is circular
+      curNode = curNode.next; 
     }
     return this;
   }
@@ -214,24 +221,4 @@ class LinkedList {
   }
 }
 
-
-
-let l = new LinkedList();
-l.add(1);
-l.add(2);
-l.add(3);
-l.add(4);
-l.add(5);
-l.add(7);
-l.add(8);
-l.add(9);
-
-console.log(l.traverse((v) => {
-  console.log(v)
-}))
-
-let partition = l.evenOddPartition();
-
-console.log(partition.traverse((v) => {
-  console.log(v)
-}))
+module.exports = {LinkedList, Node};
