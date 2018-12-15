@@ -7,14 +7,20 @@ class Deck {
 
   // method for constructing deck
   buildDeck() {
-    let constructedDeck = [];
+    // let constructedDeck = [];
     let cards = this.faceCards.concat(this.numbers);
-    this.suites.forEach((suit) => {
-      cards.forEach((card)=> {
-        constructedDeck.push(`${card} of ${suit}`)
-      })
-    })
-    return constructedDeck;
+    // this.suites.forEach((suit) => {
+    //   cards.forEach((card)=> {
+    //     constructedDeck.push(`${card} of ${suit}`)
+    //   })
+    // })
+    // return constructedDeck;
+
+
+    return this.suites.reduce((acc, suit) => {
+      acc = acc.concat(cards.map((card) => {return `${card} of ${suit}`}))
+      return acc;
+    }, [])
   }
 
   // method for dealing deck
