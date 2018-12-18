@@ -118,6 +118,28 @@ class BinaryTree {
     return left && right;
   }
 
+  createBST(nums, node) {
+    // get midpoint of array
+    let midpoint = Math.floor([nums.length / 2]);
+
+    // check root base case
+    if (!this.root) { this.root = node};
+    if (!node) {
+      node = new BinaryTreeNode(nums[midpoint]);
+    }
+
+    // split array to small and large array
+    let smallArr = nums.splice(0, midpoint);
+    let largeArr = nums.splice(midpoint - 2, nums.length); // -2 may not work?
+
+    // insert midpoint to current array?
+    
+    // call recursively for small and large arrays
+    this.createBST(smallArr, node.left);
+    this.createBST(largeArr, node.right);
+
+  }
+
   breadthFirst(cb) {
     let q = new Queue(new LinkedList());
     q.enqueue(this.root);
@@ -145,6 +167,10 @@ console.log(b.breadthFirst(console.log))
 
 console.log(b.findValue(7))
 
-//console.log(b.root.left)
-
 console.log(b.isBST(b.root)); // maybe redundant to have method on class and take root node?
+
+let array = [1, 2, 3, 4, 5, 6, 7];
+
+let c = new BinaryTree();
+
+c.createBST(array)
