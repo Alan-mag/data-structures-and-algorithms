@@ -25,10 +25,12 @@ class Stack {
   }
 }
 
-let s = new Stack(new LinkedList);
+module.exports = Stack;
 
-s.push(42);
-s.push(99);
-s.push(0);
+// let s = new Stack(new LinkedList);
 
-console.log(s)
+// s.push(42);
+// s.push(99);
+// s.push(0);
+
+// console.log(s)
