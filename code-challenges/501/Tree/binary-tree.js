@@ -102,6 +102,22 @@ class BinaryTree {
     return found;
   }
 
+  isBST(node, min = null, max = null) {
+    if (!node) {
+      return true;
+    }
+    if(max !== null & node.value >= max) {
+      return false;
+    }
+    if(max !== null & node.value <= min) {
+      return false;
+    }
+    let left = this.isBST(node.left, min, node.value);
+    let right = this.isBST(node.right, node.value, max);
+  
+    return left && right;
+  }
+
   breadthFirst(cb) {
     let q = new Queue(new LinkedList());
     q.enqueue(this.root);
@@ -119,8 +135,8 @@ let b = new BinaryTree();
 
 b.root.value = 4;
 b.add(6);
-b.add(3);
 b.add(2);
+b.add(3);
 b.add(5);
 b.add(1);
 b.add(7);
@@ -129,21 +145,6 @@ console.log(b.breadthFirst(console.log))
 
 console.log(b.findValue(7))
 
-// b.root.value = 1;
+//console.log(b.root.left)
 
-// b.root.left = new BinaryTreeNode(99);
-// b.root.left.left = new BinaryTreeNode(1);
-// b.root.left.right = new BinaryTreeNode(1);
-
-// b.root.right = new BinaryTreeNode(7);
-// b.root.right.left = new BinaryTreeNode(11);
-// b.root.right.right = new BinaryTreeNode(1000000);
-
-// console.log('Breadth-first')
-// b.breadthFirst(console.log);
-// console.log(b)
-
-// b.root.traverse(console.log);
-
-
-//console.log(b);
+console.log(b.isBST(b.root)); // maybe redundant to have method on class and take root node?
