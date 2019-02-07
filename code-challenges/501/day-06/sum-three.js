@@ -21,5 +21,3 @@ function findSumZero(arr) {
 };
 
 console.log(findSumZero([0, 1, 2, 3, 4, -1, -2, -3, -3, -2, -1]))
-
-// try adding hashtable implementation
