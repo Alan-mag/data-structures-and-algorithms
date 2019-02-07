@@ -133,6 +133,7 @@ class BinaryTree {
     let largeArr = nums.splice(midpoint - 2, nums.length); // -2 may not work?
 
     // insert midpoint to current array?
+    node = new BinaryTreeNode(nums[midpoint]);
     
     // call recursively for small and large arrays
     this.createBST(smallArr, node.left);
