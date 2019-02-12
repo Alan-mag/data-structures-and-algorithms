@@ -1,0 +1,56 @@
+1. Reverse an array. Don’t use a built-in reverse function.
+  - Got a working version? Can you develop 2 or 3 different algorithms?
+
+2. Delete duplicates from an array of integers.
+  - Got a working version? Can you develop 2 or 3 different algorithms? Consider trading time for space. What if extra space is not allowed?
+
+3. Implement merge sort.
+
+4. Sum 3: Given an array of distinct integers, find a triplet (set of 3 numbers) that sums to zero.
+  - Got a working merge sort? Now look for how you might optimize the merge algorithm. Pick a use-case, and see if you can speed it up a bit.
+
+5. Add a kth last function to return the value k elements away from the end of a linked list
+
+6. Add a reverse function. The last element should now be the head, and vice versa.
+
+7. Add a partition function that separates even and odd values within the linked list.
+  - Generalize your partition function to take a predicate, to allow partitioning on whatever logic is passed in. E.g., positive / negative, even / odd, greater than / less than some value, etc.
+
+8. Working with time series data - Find the span of a stock price:
+
+9. Given a singly linked list, where each node’s value is a single character, determine if the whole list is a palindrome. How might a stack help you?
+  - Can you work out an algorithm to check if a SLL is a palindrome that is O(n) time, and O(1) space?
+
+10. Get your hash working.
+- Import the /usr/share/dict/words into your file, and set the words into your hash (with words as keys, their lengths as values).
+- Then get them all out again.
+- Benchmark individually the get and set blocks, and see what you can do to tweak performance.
+- Take note of what your first timing is, and see how much you can improve it by!
+  -Find where you can improve the performance of your HashTable.
+
+11. Sum-3: Given an array of distinct integers, find a triplet (set of 3 numbers) that sums to zero. 
+    You should be able to do better than O(n^2 * lg n) time and no worse than O(n) space. How might a HashTable or Set help you?
+
+12. Convert your Binary Tree to a BST. Implement at least these methods:
+- add compares values, and inserts to the proper sub-tree.
+- find(value) searches the BST for a given value, and executes a callback with the value when found.
+
+13. Verify a BST: Write a function that takes a root node as an argument, and returns true only if the tree is a BST.
+
+14. Tree Reconstruction: You are given an array of values that were the result of an in-order traversal on a balanced binary search tree. 
+    Write a function that takes in that array as an argument and reconstructs a tree that would’ve given you those values in that order.
+      - Do you have benchmarking on your HashTable’s get and set methods? What happens to performance if you use a BST as a collision resolution mechanism, instead of a LinkedList?
+
+15. Implement a solution to the 0-1 Knapsack problem. Cite your sources.
+
+16. Utilize the Trie code from lecture to build an autocomplete tool.
+
+17. Now, implement your own heap.
+
+18. Complete your code for solving a maze (represented as an adjacency list).
+
+19. Given a graph of degree D, find a way to color it so no two connected nodes are colored with the same color. 
+    Use no more than D+1 colors. Starter code below! (source: Interview Cake)
+
+
+
