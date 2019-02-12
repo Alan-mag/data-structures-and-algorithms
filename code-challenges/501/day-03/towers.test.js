@@ -8,7 +8,7 @@ function hanoi(n, origin, storage, dest) {
     return;
   }
   hanoi(n - 1, origin, storage, dest)
-    dest.push(origin.pop())
+  dest.push(origin.pop())
   hanoi(n - 1, storage, dest, origin);
   return;
 }

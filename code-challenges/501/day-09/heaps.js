@@ -61,7 +61,7 @@ class MinHeap {
       let temp = this.data[swap];
       this.data[swap] = this.data[index];
       this.data[index] = temp;
-      
+
       index = swap;
     }
   }
@@ -83,6 +83,7 @@ heap.insert(2);
 heap.insert(7);
 
 console.log(heap);
+// not working!!!
 console.log(heap.pullMin());
 console.log(heap.pullMin());
 console.log(heap.pullMin());
