@@ -13,7 +13,7 @@ function findSumZero(arr) {
   // console.log(sumMap);
   
   arr.forEach((ele, index) => {
-    let checknumber = ele * -1;
+    let checknumber = ele * -1
     if(sumMap[checknumber] && sumMap[checknumber].indexOf(ele) === -1) {
       return console.log('found match', sumMap[checknumber].map(ele => arr[ele]), ele)
     }
